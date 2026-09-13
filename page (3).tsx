@@ -1,0 +1,3 @@
+import {FILMS} from '@/lib/films'
+import Link from 'next/link'
+export default function Page({params}:{params:{id:string}}){const film=FILMS.find(f=>f.id===params.id)||FILMS[0];return <main style={{background:'#0a0a0a',color:'#fff',minHeight:'100vh'}}><div style={{padding:20}}><Link href="/browse">← Back</Link></div><div style={{height:'50vh',background:film.color,display:'flex',alignItems:'flex-end',padding:20}}><h1 style={{fontSize:40,fontWeight:900}}>{film.title}</h1></div><div style={{padding:20}}><p>{film.desc}</p><p style={{color:'#888',marginTop:10,fontStyle:'italic'}}>{film.script}</p></div></main>}
